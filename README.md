@@ -90,11 +90,11 @@ The `NCTR.lua` mod extends the F-15E's NCTR capabilities by modifying the `nctr_
 Each entry in the table follows this format:
 
 ```
-nctr_table["Aircraft_Internal_Name"] = {"Display_Name", RCS_Value, Aspect_Angle}
+nctr_table["Aircraft_Internal_Name or Aircraft-InternalName"] = {"Radar_Display_Name", RCS_Value*, Aspect_Angle*}
 ```
 
-- **Aircraft_Internal_Name:** The internal identifier used by DCS for the aircraft.
-- **Display_Name:** The name that will be displayed on your radar screen.
+- **Aircraft_Internal_Name:** The internal identifier used by DCS for the aircraft. These can generally be found in the mod/aircrafts entry.lua.
+- **Radar_Display_Name:** The name that will be displayed on your radar screen.
 - **RCS_Value (Radar Cross Section):** Represents the detectability of the aircraft. A higher value means the aircraft is easier to detect.
 - **Aspect_Angle:** The maximum angle (in degrees) at which the aircraft can be detected by the NCTR system.
 
@@ -155,6 +155,6 @@ nctr_table["Aircraft_Internal_Name"] = {"Display_Name", RCS_Value, Aspect_Angle}
 
 ---
 
-**Disclaimer:** Use these mods at your own risk. Always backup your original files before making any modifications. These mods are not endorsed by Eagle Dynamics or Razbam.
+**Disclaimer:** Use these mods at your own risk. Always backup your original files before making any modifications. These mods are not endorsed by Eagle Dynamics or Razbam. I'm also not sure if the secondary numbers are for RCS and Aspect Angle.
 
 ---
