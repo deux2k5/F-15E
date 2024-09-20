@@ -1,5 +1,3 @@
----
-
 # F-15E Modifications
 
 Welcome to the **F-15E Modifications** repository! This project provides two mods for DCS World that enhance the F-15E experience:
@@ -90,12 +88,12 @@ The `NCTR.lua` mod extends the F-15E's NCTR capabilities by modifying the `nctr_
 Each entry in the table follows this format:
 
 ```
-nctr_table["Aircraft_Internal_Name or Aircraft-InternalName"] = {"Radar_Display_Name", RCS_Value*, Aspect_Angle*}
+nctr_table["Aircraft_Internal_Name or Aircraft-InternalName"] = {"Radar_Display_Name", Range_Scale*, Aspect_Angle*}
 ```
 
 - **Aircraft_Internal_Name:** The internal identifier used by DCS for the aircraft. These can generally be found in the mod/aircrafts entry.lua.
 - **Radar_Display_Name:** The name that will be displayed on your radar screen.
-- **RCS_Value (Radar Cross Section):** Represents the detectability of the aircraft. A higher value means the aircraft is easier to detect.
+- **Range_Scale:** Represents the maximum range at which the aircraft can be detected by the NCTR system.
 - **Aspect_Angle:** The maximum angle (in degrees) at which the aircraft can be detected by the NCTR system.
 
 ### Adding or Removing Aircraft
@@ -109,10 +107,10 @@ nctr_table["Aircraft_Internal_Name or Aircraft-InternalName"] = {"Radar_Display_
    - Add a new line to the `nctr_table` with the appropriate values. For example:
 
      ```
-     nctr_table["New_Aircraft_Internal_Name"] = {"Display_Name", RCS_Value, Aspect_Angle}
+     nctr_table["New_Aircraft_Internal_Name"] = {"Display_Name", Range_Scale, Aspect_Angle}
      ```
 
-   - Replace `New_Aircraft_Internal_Name`, `Display_Name`, `RCS_Value`, and `Aspect_Angle` with the actual values.
+   - Replace `New_Aircraft_Internal_Name`, `Display_Name`, `Range_Scale`, and `Aspect_Angle` with the actual values.
 
 #### Removing an Aircraft
 
@@ -121,17 +119,17 @@ nctr_table["Aircraft_Internal_Name or Aircraft-InternalName"] = {"Radar_Display_
 
 ### Adjusting Detection Parameters
 
-#### RCS_Value (Radar Cross Section)
+#### Range_Scale
 
-- **Purpose:** Determines how easily the aircraft can be detected.
+- **Purpose:** Determines the maximum range at which the aircraft can be detected.
 - **Adjusting:**
-  - Increase the value to make the aircraft more detectable.
-  - Decrease the value to make it less detectable.
+  - Increase the value to detect the aircraft at a greater range.
+  - Decrease the value to limit detection to shorter ranges.
 - **Example:**
 
   ```
-  nctr_table["F-16C"] = {"F-16", 15.0, 45.0} -- More detectable
-  nctr_table["F-16C"] = {"F-16", 5.0, 45.0}  -- Less detectable
+  nctr_table["F-16C"] = {"F-16", 15.0, 45.0} -- Detectable at longer range
+  nctr_table["F-16C"] = {"F-16", 5.0, 45.0}  -- Detectable at shorter range
   ```
 
 #### Aspect_Angle
@@ -155,6 +153,6 @@ nctr_table["Aircraft_Internal_Name or Aircraft-InternalName"] = {"Radar_Display_
 
 ---
 
-**Disclaimer:** Use these mods at your own risk. Always backup your original files before making any modifications. These mods are not endorsed by Eagle Dynamics or Razbam. I'm also not sure if the secondary numbers are for RCS and Aspect Angle.
+**Disclaimer:** Use these mods at your own risk. Always backup your original files before making any modifications. These mods are not endorsed by Eagle Dynamics or Razbam. I'm also not sure if the secondary numbers are for Range Scale and Aspect Angle.
 
 ---
